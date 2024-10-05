@@ -1,0 +1,50 @@
+﻿@page
+@using Wallone.Auth.Web.Pages
+@model RegisterModel
+
+<div class="auth-content">
+    <div class="auth-content__left">
+        <div class="auth-container__img">
+            <img src="./img/auth-img.jfif" />
+        </div>
+    </div>
+
+    <div class="auth-content__right">
+        <div class="auth-form">
+            <div class="auth-form-header">
+                <a class="form-link" asp-page="/Login" asp-route-returnURl="@Model.ReturnUrl">Вход</a>
+                <a class="form-link active">Регистрация</a>
+            </div>
+            <form method="post">
+                <div class="form-group">
+                    <label>Ник</label>
+                    <input type="text" name="request.UserName" />
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="request.Email" />
+                </div>
+                <div class="form-group">
+                    <label>Пароль</label>
+                    <input type="password" name="request.Password"/>
+                </div>
+                <div class="form-group">
+                    <label>Повторите пароль</label>
+                    <input type="password" name="request.PasswordConfirm" />
+                </div>
+                @if (@Model.ErrorMessages.Any())
+                {
+                    <div class="errors-summary">
+                        @foreach (var error in @Model.ErrorMessages)
+                        {
+                            <div>@error</div>
+                        }
+                    </div>
+                }
+                <div class="form-actions">
+                    <button class="auth-btn" type="submit">Регистрация</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
