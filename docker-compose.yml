@@ -1,0 +1,20 @@
+version: '3.4'
+
+services:
+  wallone.auth.web:
+    image: ${DOCKER_REGISTRY-}walloneauthweb
+    build:
+      context: .
+      dockerfile: modules/auth/apps/Wallone.Auth.Web/Dockerfile
+
+  mssql:
+    container_name: mssql
+    image: mcr.microsoft.com/mssql/server:latest
+    ports:
+      - 1433:1433
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Secret1_
+      - MSSQL_PID=Express
+    volumes:
+      - ../volumes/mssql/wallone:/src/mssql
