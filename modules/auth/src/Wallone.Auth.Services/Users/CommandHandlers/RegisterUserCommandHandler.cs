@@ -5,7 +5,7 @@ using Wallone.Auth.Domain.Users;
 using Wallone.Auth.Services.Contracts.Users;
 using Wallone.Auth.Services.Contracts.Users.Commands;
 using Wallone.Auth.Services.Contracts.Users.Dto;
-using Wallone.Shared.Domain;
+using Wallone.Shared.Contracts;
 using Wallone.Shared.Services.Interfaces;
 
 namespace Wallone.Auth.Services.Users.CommandHandlers
@@ -64,7 +64,8 @@ namespace Wallone.Auth.Services.Users.CommandHandlers
                 userName: request.UserName,
                 email: request.Email,
                 password: _hashPasswordService.HashPassword(request.Password),
-                userRole: new());
+                roles: new List<Role> { Role.User });
+
 
             await _userRepository.InsertAsync(user, cancellationToken);
 

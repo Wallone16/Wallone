@@ -1,6 +1,6 @@
 ﻿using MediatR;
 using Wallone.Auth.Services.Contracts.Users.Dto;
-using Wallone.Shared.Domain;
+using Wallone.Shared.Contracts;
 
 namespace Wallone.Auth.Services.Contracts.Users.Commands
 {

@@ -24,11 +24,6 @@ namespace Wallone.Auth.EntityFramework.Users.Configurations
                 .Property(x => x.Password)
                 .HasMaxLength(UserConstants.PasswordMaxLength)
                 .IsRequired();
-
-            builder
-                .HasOne(x => x.UserRole)
-                .WithOne(x => x.User)
-                .OnDelete(DeleteBehavior.NoAction);
         }
     }
 }

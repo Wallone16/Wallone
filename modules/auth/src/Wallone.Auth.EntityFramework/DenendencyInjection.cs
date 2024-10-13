@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Wallone.Auth.Domain.Users;
 using Wallone.Auth.EntityFramework.EntityFramework;
@@ -11,12 +10,28 @@ namespace Wallone.Auth.EntityFramework
     {
         public static IServiceCollection AddAuthEntityFramework(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<AuthDbContext>(options => options
-                .UseSqlServer(configuration.GetConnectionString("ConnectionString:Auth")));
+            services.AddDbContext<AuthDbContext>();
 
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IPermissionRepository, PermissionRepository>();
+
+            services
+                .AddOpenIddict()
+                .AddCoreAuth();
 
             return services;
+        }
+
+        private static OpenIddictBuilder AddCoreAuth(this OpenIddictBuilder openIddictBuilder)
+        {
+            openIddictBuilder.AddCore(options =>
+            {
+                options
+                    .UseEntityFrameworkCore()
+                    .UseDbContext<AuthDbContext>();
+            });
+
+            return openIddictBuilder;
         }
     }
 }

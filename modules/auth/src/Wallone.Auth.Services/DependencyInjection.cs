@@ -20,6 +20,7 @@ namespace Wallone.Auth.Services
 
             services.AddScoped<IHashPasswordService, HashPasswordService>();
             services.AddScoped<IAuthService, AuthService>();
+            services.AddScoped<IPermissionService, PermissionService>();
 
             services
                 .AddMapping()

@@ -11,7 +11,7 @@ namespace Wallone.Auth.EntityFramework.Users.Configurations
         {
             builder.ToTable("UserRoles", EntityFrameworkSettings.DbScheme);
 
-            builder.HasKey(x => x.Id);
+            builder.HasKey(x => new { x.UserId, x.RoleId });
         }
     }
 }

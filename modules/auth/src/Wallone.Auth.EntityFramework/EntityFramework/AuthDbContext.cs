@@ -1,22 +1,33 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using System.Reflection;
 using Wallone.Auth.Domain.Users;
 
 namespace Wallone.Auth.EntityFramework.EntityFramework
 {
-    internal sealed class AuthDbContext : DbContext
+    public class AuthDbContext : DbContext
     {
-        public AuthDbContext(DbContextOptions<AuthDbContext> options)
-            : base(options)
-        { }
+        private readonly IConfiguration _configuration;
+
+        public AuthDbContext(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
 
         public DbSet<User> Users { get; private set; }
-        public DbSet<UserRole> UserRoles { get; private set; }
         public DbSet<Role> Roles { get; private set; }
+        public DbSet<Permission> Permissions { get; private set; }
+        public DbSet<RolePermission> RolePermissions { get; private set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer(
+                _configuration.GetConnectionString(EntityFrameworkSettings.ConnectionString));
         }
     }
 }

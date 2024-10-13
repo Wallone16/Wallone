@@ -24,9 +24,27 @@ namespace Wallone.Auth.EntityFramework.Users.Configurations
                 .IsRequired();
 
             builder
-                .HasOne(x => x.UserRole)
-                .WithOne(x => x.Role)
-                .OnDelete(DeleteBehavior.NoAction);
+                .HasMany(x => x.Permissions)
+                .WithMany()
+                .UsingEntity<RolePermission>();
+
+            builder
+                .HasMany(x => x.Users)
+                .WithMany(x => x.Roles)
+                .UsingEntity<UserRole>();
+
+            builder.HasData(SeedRoles());
+        }
+
+        private IEnumerable<Role> SeedRoles()
+        {
+            var roles = new List<Role>
+            {
+                Role.Admin,
+                Role.User
+            };
+
+            return roles;
         }
     }
 }

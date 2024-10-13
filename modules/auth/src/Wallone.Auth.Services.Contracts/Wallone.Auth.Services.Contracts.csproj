@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Wallone.Auth.Domain.Shared\Wallone.Auth.Domain.Shared.csproj" />
+    <ProjectReference Include="..\..\..\..\shared\Wallone.Shared.Contracts\Wallone.Shared.Contracts.csproj" />
   </ItemGroup>
 
 </Project>

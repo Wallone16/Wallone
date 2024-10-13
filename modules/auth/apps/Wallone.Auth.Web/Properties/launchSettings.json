@@ -1,24 +1,5 @@
 {
   "profiles": {
-    "Wallone.AuthServer": {
-      "commandName": "Project",
-      "launchBrowser": true,
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      },
-      "dotnetRunMessages": false,
-      "applicationUrl": "https://localhost:44330"
-    },
-    "http": {
-      "commandName": "Project",
-      "launchBrowser": true,
-      "launchUrl": "swagger",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      },
-      "dotnetRunMessages": true,
-      "applicationUrl": "http://localhost:5193"
-    },
     "https": {
       "commandName": "Project",
       "launchBrowser": true,
@@ -27,7 +8,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "dotnetRunMessages": true,
-      "applicationUrl": "https://localhost:7093;http://localhost:5193"
+      "applicationUrl": "https://localhost:44330;http://localhost:5193"
     },
     "Container (Dockerfile)": {
       "commandName": "Docker",

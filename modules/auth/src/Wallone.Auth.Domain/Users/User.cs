@@ -6,20 +6,22 @@
         public string UserName { get; private set; }
         public string Email { get; private set; }
         public byte[] Password { get; private set; }
-        public UserRole UserRole { get; private set; }
+        public IEnumerable<Role> Roles { get; private set; }
+
+        protected User() { }
 
         public User(
             Guid id,
             string userName,
             string email,
             byte[] password,
-            UserRole userRole)
+            IEnumerable<Role> roles)
         {
             Id = id;
             UserName = userName;
             Email = email;
             Password = password;
-            UserRole = userRole;
+            Roles = roles;
         }
     }
 }

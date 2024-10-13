@@ -5,6 +5,7 @@ using Wallone.Auth.Domain.Users;
 using Wallone.Auth.Services.Contracts.Users;
 using Wallone.Auth.Services.Contracts.Users.Commands;
 using Wallone.Auth.Services.Contracts.Users.Dto;
+using Wallone.Shared.Contracts;
 using Wallone.Shared.Domain;
 
 namespace Wallone.Auth.Services.Users.CommandHandlers
