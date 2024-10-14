@@ -9,6 +9,7 @@ namespace Wallone.Shared.Services
         public static IServiceCollection AddSharedServices(this IServiceCollection services)
         {
             services.AddScoped<IDateTimeProvider, DateTimeProvider>();
+            services.AddScoped<IGuidGenerator, GuidGenerator>();
 
             return services;
         }

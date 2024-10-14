@@ -11,13 +11,27 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "auth", "auth", "{CEA0AA4E-E
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{778B4643-C463-48A3-A531-2CDB7A2B93E6}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{C0D8772F-B706-4768-849E-2154E3501076}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wallone.Shared.Services", "shared\Wallone.Shared.Services\Wallone.Shared.Services.csproj", "{CB808115-B1E9-41FE-80D0-4C2E5B56AF9C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wallone.Auth.Domain", "modules\auth\src\Core\Wallone.Auth.Domain\Wallone.Auth.Domain.csproj", "{C62E5910-1133-4D0F-A84D-CC7E9AF47263}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wallone.Shared.Contracts", "shared\Wallone.Shared.Contracts\Wallone.Shared.Contracts.csproj", "{717BF125-B93C-44E9-9E01-DF1610F031EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wallone.Shared.Services", "shared\Wallone.Shared.Services\Wallone.Shared.Services.csproj", "{CB808115-B1E9-41FE-80D0-4C2E5B56AF9C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wallone.Shared.Domain", "shared\Wallone.Shared.Domain\Wallone.Shared.Domain.csproj", "{4E314A2F-AC22-4F46-AC8D-C091727D3FF1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wallone.Shared.Contracts", "shared\Wallone.Shared.Contracts\Wallone.Shared.Contracts.csproj", "{717BF125-B93C-44E9-9E01-DF1610F031EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wallone.Auth.Domain", "modules\auth\src\Wallone.Auth.Domain\Wallone.Auth.Domain.csproj", "{2F899766-3C68-435A-889C-E11F911AD2A1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wallone.Auth.Services", "modules\auth\src\Wallone.Auth.Services\Wallone.Auth.Services.csproj", "{2F5C0A8F-EEAC-446F-9C92-D485566A1C0E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wallone.Auth.Services.Contracts", "modules\auth\src\Wallone.Auth.Services.Contracts\Wallone.Auth.Services.Contracts.csproj", "{3133C2D1-7E8F-452C-9ED6-07D639D85B13}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wallone.Auth.EntityFramework", "modules\auth\src\Wallone.Auth.EntityFramework\Wallone.Auth.EntityFramework.csproj", "{8E4F1AC6-B6CA-46F8-A4EB-6976D3C97887}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "apps", "apps", "{285B5E43-CDAA-4FB2-A05B-4A7880AF139F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wallone.Auth.Web", "modules\auth\apps\Wallone.Auth.Web\Wallone.Auth.Web.csproj", "{E74B2DF6-8FEE-432C-A227-FF556DAF1230}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wallone.Auth.Domain.Shared", "modules\auth\src\Wallone.Auth.Domain.Shared\Wallone.Auth.Domain.Shared.csproj", "{A7EF84B6-D7E6-4001-A497-F4422897C2AD}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{7DBF306A-0995-41C5-B65A-37D1B4425F61}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +39,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C62E5910-1133-4D0F-A84D-CC7E9AF47263}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C62E5910-1133-4D0F-A84D-CC7E9AF47263}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C62E5910-1133-4D0F-A84D-CC7E9AF47263}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C62E5910-1133-4D0F-A84D-CC7E9AF47263}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CB808115-B1E9-41FE-80D0-4C2E5B56AF9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CB808115-B1E9-41FE-80D0-4C2E5B56AF9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CB808115-B1E9-41FE-80D0-4C2E5B56AF9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -37,6 +47,38 @@ Global
 		{717BF125-B93C-44E9-9E01-DF1610F031EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{717BF125-B93C-44E9-9E01-DF1610F031EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{717BF125-B93C-44E9-9E01-DF1610F031EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E314A2F-AC22-4F46-AC8D-C091727D3FF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E314A2F-AC22-4F46-AC8D-C091727D3FF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E314A2F-AC22-4F46-AC8D-C091727D3FF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E314A2F-AC22-4F46-AC8D-C091727D3FF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F899766-3C68-435A-889C-E11F911AD2A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F899766-3C68-435A-889C-E11F911AD2A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F899766-3C68-435A-889C-E11F911AD2A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F899766-3C68-435A-889C-E11F911AD2A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F5C0A8F-EEAC-446F-9C92-D485566A1C0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F5C0A8F-EEAC-446F-9C92-D485566A1C0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F5C0A8F-EEAC-446F-9C92-D485566A1C0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F5C0A8F-EEAC-446F-9C92-D485566A1C0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3133C2D1-7E8F-452C-9ED6-07D639D85B13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3133C2D1-7E8F-452C-9ED6-07D639D85B13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3133C2D1-7E8F-452C-9ED6-07D639D85B13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3133C2D1-7E8F-452C-9ED6-07D639D85B13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E4F1AC6-B6CA-46F8-A4EB-6976D3C97887}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E4F1AC6-B6CA-46F8-A4EB-6976D3C97887}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E4F1AC6-B6CA-46F8-A4EB-6976D3C97887}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E4F1AC6-B6CA-46F8-A4EB-6976D3C97887}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E74B2DF6-8FEE-432C-A227-FF556DAF1230}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E74B2DF6-8FEE-432C-A227-FF556DAF1230}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E74B2DF6-8FEE-432C-A227-FF556DAF1230}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E74B2DF6-8FEE-432C-A227-FF556DAF1230}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7EF84B6-D7E6-4001-A497-F4422897C2AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7EF84B6-D7E6-4001-A497-F4422897C2AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7EF84B6-D7E6-4001-A497-F4422897C2AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7EF84B6-D7E6-4001-A497-F4422897C2AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DBF306A-0995-41C5-B65A-37D1B4425F61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DBF306A-0995-41C5-B65A-37D1B4425F61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DBF306A-0995-41C5-B65A-37D1B4425F61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DBF306A-0995-41C5-B65A-37D1B4425F61}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -44,10 +86,16 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{CEA0AA4E-E48F-4C5E-AF0C-7638F94D1CBE} = {F18E6EFB-175E-46E8-984E-36A53CA1FD5F}
 		{778B4643-C463-48A3-A531-2CDB7A2B93E6} = {CEA0AA4E-E48F-4C5E-AF0C-7638F94D1CBE}
-		{C0D8772F-B706-4768-849E-2154E3501076} = {778B4643-C463-48A3-A531-2CDB7A2B93E6}
-		{C62E5910-1133-4D0F-A84D-CC7E9AF47263} = {C0D8772F-B706-4768-849E-2154E3501076}
 		{CB808115-B1E9-41FE-80D0-4C2E5B56AF9C} = {3C8C9977-3E46-42D0-AF11-16B0E1A37B0F}
 		{717BF125-B93C-44E9-9E01-DF1610F031EF} = {3C8C9977-3E46-42D0-AF11-16B0E1A37B0F}
+		{4E314A2F-AC22-4F46-AC8D-C091727D3FF1} = {3C8C9977-3E46-42D0-AF11-16B0E1A37B0F}
+		{2F899766-3C68-435A-889C-E11F911AD2A1} = {778B4643-C463-48A3-A531-2CDB7A2B93E6}
+		{2F5C0A8F-EEAC-446F-9C92-D485566A1C0E} = {778B4643-C463-48A3-A531-2CDB7A2B93E6}
+		{3133C2D1-7E8F-452C-9ED6-07D639D85B13} = {778B4643-C463-48A3-A531-2CDB7A2B93E6}
+		{8E4F1AC6-B6CA-46F8-A4EB-6976D3C97887} = {778B4643-C463-48A3-A531-2CDB7A2B93E6}
+		{285B5E43-CDAA-4FB2-A05B-4A7880AF139F} = {CEA0AA4E-E48F-4C5E-AF0C-7638F94D1CBE}
+		{E74B2DF6-8FEE-432C-A227-FF556DAF1230} = {285B5E43-CDAA-4FB2-A05B-4A7880AF139F}
+		{A7EF84B6-D7E6-4001-A497-F4422897C2AD} = {778B4643-C463-48A3-A531-2CDB7A2B93E6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E6766241-E58D-4DD0-9531-7E915CFB8037}
